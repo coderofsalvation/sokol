@@ -50,6 +50,12 @@ jobs:
           run: |
             cd workspace/sokol-samples
             python fips run sokol-test sapp-win64-vstudio-debug
+        - name: Archive production artifacts
+          uses: actions/upload-artifact@v2
+          with:
+            name: dist-without-markdown
+            path: |
+              workspace/fips-deploy/sokol-samples
     mac:
         runs-on: macos-latest
         steps:
